@@ -1,0 +1,53 @@
+class ApiPaths {
+  static const String uploadFile = '/uploads/';
+  static const String uploadSelfie = '/temp_uploads/';
+  static const String loginPath = '/users/login/';
+  static const String forgotPassword = '/users/user_reset_mail/';
+  static const String passwordChangePath = '/users/password_change/';
+  static const String userChangePath = '/users/superuser_login/';
+  static const String userDetailsPath = '/users/user_clone/';
+  static const String employeeDetailsPath = '/employee_info/';
+  static const String circularPath = '/hr_settings/my_notices/';
+  static const String hrSettings = '/hr_settings/';
+  static const String getGrievanceTypeDetail = '/hr_settings/grievance_detail/';
+  static const String holidayPath = '/hr_settings/my_holidays/';
+  static const String getLeaveCount = '/employee_leave/leave_count/';
+  static const String attendanceAllMonthPath = '/attendance/all_month_summary/';
+  static const String attendanceMonthlySummaryPath =
+      '/attendance/monthly_summary/';
+  static const String fullAttendanceSummaryPath = '/attendance/full_summary/';
+  static const String reporteesSummaryPath = '/attendance/reportees_summary/';
+  static const String reporteesPath =
+      '/employee_info/reporters/?pagination=false';
+  static const String getCompOffPath = '/employee_leave/';
+  static const String getApprovalCompOffPath = '/attendance/comp_off_requests/';
+  static const String getAvailableCompOffPath =
+      '/attendance/comp_off_approved/?is_approved=true/';
+  static const String postCompOffPath = '/attendance/comp_off_approval/';
+  static const String requestCompOffPath =
+      '/attendance/comp_off_requests/?action_taken=false';
+  static const String cancelCompOffPath = '/employee_leave/';
+  static const String getTimeSheetPath = '/time_sheet/my/';
+  static const String getPaySlipPath = '/pay_detail/release_salary/';
+  static const String getPaySlipPrintPath = '/pay_detail/print_payslip/';
+  static const String getApprovalTimeSheetPath = '/time_sheet/approval/';
+  static const String getBulkApprovalTimeSheetPath =
+      '/time_sheet/approval_bulk/';
+  static const String postTimeSheetPath = '/time_sheet/';
+  static const String getLeaveDetails = '/employee_leave/';
+  static const String approveLeave = '/employee_leave/leave_approval/';
+  static const String postLeave = '/employee_leave/';
+  static const String getLeaveLogs = '/employee_leave/leave_count/';
+  static const String getGrievanceDetails = '/grievance/my/';
+  static const String getGrievanceApprovalDetails = '/grievance/hod_approval/';
+  static const String postGrievanceDetails = '/grievance/';
+  static const String approveCompOff = '/attendance/comp_off_approval/';
+  static const String approveBulkCompOff = '/attendance/bulk_comp_off_approval/';
+  static const String getOnDutyDetails = '/od/';
+  static const String getApproveOnDutyDetails = '/od/od_approval/';
+  static const String postOnDuty = '/od/';
+  static const String approveOnDuty = '/od/od_approval/';
+  static const String getProjects =
+      '/hr_settings/my_projects/?pagination=false';
+  static const String postMobileAttendance = '/attendance/mobile_attendance/';
+}
