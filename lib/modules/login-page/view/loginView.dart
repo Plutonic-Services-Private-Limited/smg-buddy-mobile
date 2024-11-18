@@ -8,7 +8,7 @@ import 'package:url_launcher/url_launcher.dart';
 
 class LoginView extends StatelessWidget {
 
-  // const LoginView({super.key});
+  const LoginView({super.key});
 
   @override
   Widget build(BuildContext context) {
