@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:pinput/pinput.dart';
-import 'package:smg_buddy_app/modules/otp-verify/controller/otp-controller.dart';
+import 'package:smg_buddy_app/modules/otp_verify/controller/otp_controller.dart';
 import 'package:smg_buddy_app/routes/app_pages.dart';
 import 'package:smg_buddy_app/theme/app_colors.dart';
 import 'package:smg_buddy_app/theme/app_styles.dart';
@@ -30,12 +30,12 @@ class OtpVerification extends StatelessWidget {
                     Text("Verify your phone number",textAlign: TextAlign.left,style: Styles.headerMedium25,),
                     SizedBox(height: 20,),
                     Text("Please enter the code we sent to",textAlign: TextAlign.left,style: Styles.bodyMedium16,),
-                    // Text(controller.countryCode+controller.phNumber,textAlign: TextAlign.left,style: Styles.bodyMedium16,),
+                    Obx(()=>Text("${controller.countryCode.value}${controller.phNumber.value}",textAlign: TextAlign.left,style: Styles.bodyMedium16,),),
                     SizedBox(height: 50,),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Pinput(
+                       Obx(()=> Pinput(
                           onChanged: (value) {
                             controller.otp=value;
                             controller.otp.length==4?controller.isEnabled.value=true:controller.isEnabled.value=false;
@@ -50,10 +50,10 @@ class OtpVerification extends StatelessWidget {
                             ),
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(19),
-                              border: Border.all(color: Colors.grey),
+                              border: Border.all(color: controller.isEnabled.value? AppColors.secondaryColor:AppColors.secondaryText20),
                             ),
                           ),
-                      )
+                      ))
                       ],
                     ),
                     SizedBox(height: 40,),

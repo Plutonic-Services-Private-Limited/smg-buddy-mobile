@@ -12,7 +12,6 @@ class AppTranslations {
       "ongoing": "Ongoing",
       "cancelled": "Cancelled",
       "home": "Home",
-      "schedule": "Schedule",
       "notification": "Notifications",
       "menu": "Menu",
       "calendar": "Calendar View",
@@ -38,7 +37,7 @@ class AppTranslations {
       "acknowleged": "has been acknowledged by the customer.",
       "nothingToSee": "Nothing to see yet",
       "urNotif": "Your notifications will show up here.",
-      "naa":"Noo"
+      "naa":"No"
     },
     'hi': {
       "continue": "जारी रखें",
@@ -52,7 +51,6 @@ class AppTranslations {
       "ongoing": "चल रहा है",
       "cancelled": "रद्द कर दिया गया",
       "home": "मुख्य पृष्ठ",
-      "schedule": "अनुसूची",
       "notification": "सूचनाएं",
       "menu": "मेन्यू",
       "calendar": "कैलेंडर दृश्य",

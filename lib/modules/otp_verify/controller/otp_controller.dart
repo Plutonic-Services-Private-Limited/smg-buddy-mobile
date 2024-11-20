@@ -8,8 +8,12 @@ class OtpController extends GetxController{
   Timer? _timer;
   int remaningSeconds=0;
   final time = "00:30".obs;
+  var phNumber="".obs;
+  var countryCode="".obs;
   @override
   void onReady(){
+    phNumber.value=Get.arguments["phNumber"];
+    countryCode.value=Get.arguments["countryCode"];
     _startTimer(30);
     super.onReady();
   }

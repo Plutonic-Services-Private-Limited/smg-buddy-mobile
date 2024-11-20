@@ -1,4 +1,4 @@
-import 'package:smg_buddy_app/modules/login-page/controllers/login-controller.dart';
+import 'package:smg_buddy_app/modules/login_page/controllers/login_controller.dart';
 import 'package:smg_buddy_app/routes/app_pages.dart';
 import 'package:smg_buddy_app/theme/app_colors.dart';
 import 'package:smg_buddy_app/theme/app_styles.dart';
@@ -89,7 +89,7 @@ class LoginView extends StatelessWidget {
 
 
                                       onPressed: (){
-                                        Get.offNamed(Routes.otpverify);
+                                        Get.offNamed(Routes.otpverify,arguments: {"phNumber":controller.phNumber,"countryCode":controller.countryCode});
                                       },
 
                                       child: Container(
