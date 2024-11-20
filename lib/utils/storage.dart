@@ -13,6 +13,9 @@ class Storage {
     box = GetStorage();
     return result;
   }
+  static String? get language => box?.read(StorageKeys.language);
+
+  static set language(String? value) => box?.write(StorageKeys.language, value);
 
   // Api key
   static String? get token => box?.read(StorageKeys.token);

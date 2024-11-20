@@ -6,8 +6,14 @@ class AppTheme {
       fontFamily: 'Cabin',
       scaffoldBackgroundColor: AppColors.white,
       primaryColor: AppColors.primaryColor,
+      filledButtonTheme: btntheme,
       pageTransitionsTheme: const PageTransitionsTheme(builders: {
         TargetPlatform.android: CupertinoPageTransitionsBuilder(),
         TargetPlatform.iOS: CupertinoPageTransitionsBuilder(),
       }));
+  static final btntheme = FilledButtonThemeData(
+    style: ButtonStyle(
+      backgroundColor: MaterialStateProperty.all(AppColors.primaryColor),
+    )
+  );
 }

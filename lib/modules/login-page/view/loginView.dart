@@ -1,5 +1,7 @@
 import 'package:smg_buddy_app/modules/login-page/controllers/login-controller.dart';
+import 'package:smg_buddy_app/routes/app_pages.dart';
 import 'package:smg_buddy_app/theme/app_colors.dart';
+import 'package:smg_buddy_app/theme/app_styles.dart';
 import 'package:smg_buddy_app/widgets/data-field.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -30,8 +32,8 @@ class LoginView extends StatelessWidget {
                                 children: [
                                   Text("Login",
                                       textAlign: TextAlign.left,
-                                      style: TextStyle(fontSize: 25)),
-                                  Text("Welcome to store my goods!"),
+                                      style: Styles.headerLarge28),
+                                  Text("Welcome to store my goods!",style: Styles.bodyMedium16,),
                                   SizedBox(height: 40,),
                                   Row(
                                     mainAxisSize: MainAxisSize.min,
@@ -83,18 +85,16 @@ class LoginView extends StatelessWidget {
                                   SizedBox(
                                     height: 30,
                                   ),
-                                  ElevatedButton(
+                                  FilledButton(
 
-                                      style: ButtonStyle(
 
-                                        backgroundColor: MaterialStateProperty.all(AppColors.primaryColor),
-                                      ),
-                                      onPressed: () {
-
+                                      onPressed: (){
+                                        Get.offNamed(Routes.otpverify);
                                       },
+
                                       child: Container(
                                         padding: EdgeInsets.symmetric(horizontal: 0,vertical: 15),
-                                        child: Text("Get OTP",textAlign: TextAlign.center,style: TextStyle(color: AppColors.white),),
+                                        child: Text("Get OTP",textAlign: TextAlign.center,style: Styles.buttonText,),
                                         width: double.infinity,
                                       )
                                   )
@@ -106,7 +106,8 @@ class LoginView extends StatelessWidget {
 
                             text: TextSpan(
                                 style: TextStyle(
-                                    color: AppColors.dataColour
+                                    color: AppColors.black,
+                                  fontFamily: "Cabin"
                                 ),
                                 children: [
                                   const TextSpan(
