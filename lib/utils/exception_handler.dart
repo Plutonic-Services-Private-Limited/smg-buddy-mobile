@@ -7,17 +7,17 @@ import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:get/get.dart';
 
 class APIExceptionString implements Exception {
-  String? detail;
+  String? message;
 
-  APIExceptionString({this.detail});
+  APIExceptionString({this.message});
 
   APIExceptionString.fromJson(Map<String, dynamic> json) {
-    detail = json['detail'];
+    message = json['message'];
   }
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = <String, dynamic>{};
-    data['detail'] = detail;
+    data['message'] = message;
     return data;
   }
 }
@@ -40,7 +40,7 @@ class ExceptionHandler {
             var apiException =
             APIExceptionString.fromJson(error.response?.data);
             EasyLoading.showError(
-                apiException.detail ?? ErrorMessages.networkGeneral);
+                apiException.message ?? ErrorMessages.networkGeneral);
           } catch (e) {
             EasyLoading.showError(ErrorMessages.networkGeneral);
           }
@@ -52,7 +52,7 @@ class ExceptionHandler {
             var apiException =
                 APIExceptionString.fromJson(error.response?.data);
             EasyLoading.showError(
-                apiException.detail ?? ErrorMessages.networkGeneral);
+                apiException.message ?? ErrorMessages.networkGeneral);
           } catch (e) {
             EasyLoading.showError(ErrorMessages.networkGeneral);
           }

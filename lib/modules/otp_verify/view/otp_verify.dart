@@ -63,7 +63,9 @@ class OtpVerification extends StatelessWidget {
                       children: [
                         Text("Didn't get the code ? ",style: Styles.bodyMedium16,),
                         InkWell(
-                          onTap: null,
+                          onTap: () async {
+                            await controller.resendOtp();
+                          },
                           child: Text("Resend it.",style: Styles.bodyMedium16.copyWith(
                             color: AppColors.primaryColor
                           ),),
@@ -78,8 +80,11 @@ class OtpVerification extends StatelessWidget {
                     ),),
                     SizedBox(height: 20,),
                     Obx(()=>FilledButton(
-                        onPressed: controller.isEnabled.value?(){
-                          Get.offNamed(Routes.language);
+                        onPressed: controller.isEnabled.value?() async {
+                          var status= await controller.verifyOtp();
+                          if(status){
+                            Get.offNamed(Routes.language);
+                          }
                         }:null,
                         style: ButtonStyle(
                           backgroundColor: controller.isEnabled.value?MaterialStateProperty.all(AppColors.primaryColor):MaterialStateProperty.all(AppColors.secondaryText30)

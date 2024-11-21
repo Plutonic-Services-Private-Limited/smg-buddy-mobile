@@ -25,6 +25,9 @@ class NetworkRequester {
       headers: {
         'Accept': Headers.jsonContentType,
         'Content-Type': 'application/json',
+        'auth-token':
+            'eyJ0eXAiOiJqd3QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6NTIsIm5hbWUiOiJQcmFuamFsIiwiZW1haWwiOiJhY2NvdW50czFAc3RvcmVteWdvb2RzLmluIiwicm9sZSI6IlBheW1lbnQgRGFzaGJvYXJkIiwibW9kdWxlcyI6InBheW1lbnRfZGFzaGJvYXJkcyIsImlzc3VlZEF0IjoiMjAyNC0wOS0xMFQxMTo1Nzo0MSswNTMwIn0.2DRPENbMRfDIXbprVG7xlri6OM8uQehf3aHLRI0_6Ac',
+        'Authorization': 'Bearer kldaklshIIyo1ioy(0290hKLHKL!NbklhlHSKHKlg1gfu',
         ...?headers
       },
     );

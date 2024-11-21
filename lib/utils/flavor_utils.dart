@@ -44,11 +44,7 @@ class Env {
   }
 
   static String get baseURL {
-    return "$baseDomain/cpc-api/";
-  }
-
-  static String get payrollURL {
-    return "$baseDomain/cpc-payroll/";
+    return "$baseDomain/super_admin_console/public/api/";
   }
 
   static String get mediaURL {
@@ -68,9 +64,9 @@ class Env {
   static String get baseDomain {
     switch (appFlavor) {
       case Flavor.dev:
-        return 'https://nix.plutonic.co.in';
+        return 'https://staging.api.storemygoods.in';
       case Flavor.stage:
-        return 'https://erp.cpcmail.in';
+        return 'https://staging.api.storemygoods.in';
       case Flavor.prod:
         return 'https://erp.chaitanyaprojects.com';
       default:

@@ -1,3 +1,4 @@
+import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:smg_buddy_app/modules/login_page/controllers/login_controller.dart';
 import 'package:smg_buddy_app/routes/app_pages.dart';
 import 'package:smg_buddy_app/theme/app_colors.dart';
@@ -78,9 +79,9 @@ class LoginView extends StatelessWidget {
                                           onChanged: (value) {
                                             controller.phNumber.value = value;
                                             if(controller.phNumber.value.length==10){
-                                              controller.isEnabled.value=true;
+                                              controller.verifyUser();
                                             }else{
-                                              controller.isEnabled.value=false;
+                                              controller.isEnabled(false);
                                             }
                                           },
                                         ),
@@ -88,22 +89,27 @@ class LoginView extends StatelessWidget {
 
                                     ],
                                   ),
-                                  SizedBox(
+                                  const SizedBox(
                                     height: 30,
                                   ),
                                   Obx(()=>FilledButton(
 
 
-                                      onPressed: controller.isEnabled.value?(){
-                                        Get.offNamed(Routes.otpverify,arguments: {"phNumber":controller.phNumber.value,"countryCode":controller.countryCode.value});
+                                      onPressed: controller.isEnabled.value?() async {
+                                        var status = await controller.getOtp();
+                                        if(status) {
+                                          Get.offNamed(Routes.otpverify,arguments: {"phNumber":controller.phNumber.value,"countryCode":controller.countryCode.value,"id":controller.userId.value});
+                                        } else {
+                                          EasyLoading.showError("OTP not sent");
+                                        }
                                       }:null,
                                       style: ButtonStyle(
                                         backgroundColor: controller.isEnabled.value?MaterialStateProperty.all(AppColors.primaryColor):MaterialStateProperty.all(AppColors.secondaryText30)
                                       ),
                                       child: Container(
-                                        padding: EdgeInsets.symmetric(horizontal: 0,vertical: 15),
-                                        child: Text("Get OTP",textAlign: TextAlign.center,style: Styles.buttonText,),
+                                        padding: const EdgeInsets.symmetric(horizontal: 0,vertical: 15),
                                         width: double.infinity,
+                                        child: Text("Get OTP",textAlign: TextAlign.center,style: Styles.buttonText,),
                                       )
                                   ))
                                 ],

@@ -13,6 +13,7 @@ class DashboardController extends GetxController{
   @override
   void onReady(){
     calcDays();
+    update();
     super.onReady();
   }
   void calcDays(){

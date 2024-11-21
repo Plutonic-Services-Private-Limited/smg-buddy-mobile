@@ -19,7 +19,7 @@ class LanguageSelect extends StatelessWidget {
             appBar: AppBar(
               leading: IconButton(
                 onPressed: () {
-                  Get.offNamed(Routes.otpverify);
+                  Get.offNamed(Routes.dashboard);
                 },
                 icon: Icon(Icons.chevron_left),
               ),
