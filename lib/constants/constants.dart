@@ -18,3 +18,12 @@ class AppConstants {
   static const firstHalf = 'first_half';
   static const fullLeave = 'full_leave';
 }
+
+class DateConstant{
+  static const monthsOfYear = [
+  "January", "February", "March", "April",
+  "May", "June", "July", "August",
+  "September", "October", "November", "December"
+  ];
+  static const weekDays= ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+}

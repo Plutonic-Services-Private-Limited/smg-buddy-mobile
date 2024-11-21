@@ -6,4 +6,5 @@ abstract class Routes {
   static const dashboard = '/dashboard';
   static const otpverify = '/otp_verify';
   static const language = '/language';
+  static const calendar = '/calendar';
 }

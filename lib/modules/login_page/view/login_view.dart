@@ -57,7 +57,8 @@ class LoginView extends StatelessWidget {
                                                           .dataColour,
                                                       width: 2))),
                                           onChanged: (value) {
-                                            controller.countryCode = value!;
+                                            controller.countryCode.value = value!;
+
                                           },
                                         ),
                                       ),
@@ -75,7 +76,12 @@ class LoginView extends StatelessWidget {
                                             return null;
                                           },
                                           onChanged: (value) {
-                                            controller.phNumber = value;
+                                            controller.phNumber.value = value;
+                                            if(controller.phNumber.value.length==10){
+                                              controller.isEnabled.value=true;
+                                            }else{
+                                              controller.isEnabled.value=false;
+                                            }
                                           },
                                         ),
                                       ),
@@ -85,19 +91,21 @@ class LoginView extends StatelessWidget {
                                   SizedBox(
                                     height: 30,
                                   ),
-                                  FilledButton(
+                                  Obx(()=>FilledButton(
 
 
-                                      onPressed: (){
-                                        Get.offNamed(Routes.otpverify,arguments: {"phNumber":controller.phNumber,"countryCode":controller.countryCode});
-                                      },
-
+                                      onPressed: controller.isEnabled.value?(){
+                                        Get.offNamed(Routes.otpverify,arguments: {"phNumber":controller.phNumber.value,"countryCode":controller.countryCode.value});
+                                      }:null,
+                                      style: ButtonStyle(
+                                        backgroundColor: controller.isEnabled.value?MaterialStateProperty.all(AppColors.primaryColor):MaterialStateProperty.all(AppColors.secondaryText30)
+                                      ),
                                       child: Container(
                                         padding: EdgeInsets.symmetric(horizontal: 0,vertical: 15),
                                         child: Text("Get OTP",textAlign: TextAlign.center,style: Styles.buttonText,),
                                         width: double.infinity,
                                       )
-                                  )
+                                  ))
                                 ],
                               )
                           ),

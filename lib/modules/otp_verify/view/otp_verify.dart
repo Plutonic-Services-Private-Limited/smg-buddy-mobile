@@ -82,7 +82,7 @@ class OtpVerification extends StatelessWidget {
                           Get.offNamed(Routes.language);
                         }:null,
                         style: ButtonStyle(
-                          backgroundColor: controller.isEnabled.value?MaterialStateProperty.all(AppColors.primaryColor):MaterialStateProperty.all(Colors.grey)
+                          backgroundColor: controller.isEnabled.value?MaterialStateProperty.all(AppColors.primaryColor):MaterialStateProperty.all(AppColors.secondaryText30)
                         ),
 
                         child: Container(
