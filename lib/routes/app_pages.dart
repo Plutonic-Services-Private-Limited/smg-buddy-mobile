@@ -1,6 +1,7 @@
 import 'package:smg_buddy_app/modules/dashboard/view/calender_view.dart';
-import 'package:smg_buddy_app/modules/dashboard/view/dashboard_view.dart';
+import 'package:smg_buddy_app/modules/dashboard/view/schedule_view.dart';
 import 'package:smg_buddy_app/modules/language_selector/view/language_select.dart';
+import 'package:smg_buddy_app/modules/menu_screen/view/menu_view.dart';
 import 'package:smg_buddy_app/modules/otp_verify/view/otp_verify.dart';
 import 'package:smg_buddy_app/modules/splash/views/splash_page.dart';
 import 'package:get/get.dart';
@@ -14,7 +15,8 @@ abstract class AppPages {
     GetPage(name: Routes.login, page: () =>  LoginView()),
     GetPage(name: Routes.otpverify, page: () =>  OtpVerification()),
     GetPage(name: Routes.language, page: () =>  LanguageSelect()),
-    GetPage(name: Routes.dashboard, page: () =>  DashboardView()),
+    GetPage(name: Routes.schedule, page: () =>  ScheduleView()),
     GetPage(name: Routes.calendar, page: () =>  CalendarView()),
+    GetPage(name: Routes.menu, page: () =>  MenuView()),
   ];
 }

@@ -19,7 +19,7 @@ class LanguageSelect extends StatelessWidget {
             appBar: AppBar(
               leading: IconButton(
                 onPressed: () {
-                  Get.offNamed(Routes.dashboard);
+                  Get.offNamed(Routes.schedule);
                 },
                 icon: Icon(Icons.chevron_left),
               ),
@@ -77,7 +77,7 @@ class LanguageSelect extends StatelessWidget {
                                     controller.selectedLanguage]["code"]!,
                                 ""));
                             controller.update();
-                            Get.offNamed(Routes.dashboard);
+                            Get.offNamed(Routes.schedule);
                           },
                           child: Container(
                             padding: EdgeInsets.symmetric(

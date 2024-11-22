@@ -32,6 +32,7 @@ class OtpController extends GetxController {
   resendOtp() async{
     EasyLoading.show();
     var status=await authRepo.resendOtp(phNumber.value, id);
+    _startTimer(30);
     EasyLoading.dismiss();
     return status;
   }

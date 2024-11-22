@@ -3,4 +3,6 @@ class ApiPaths {
   static const String sendOtp = '/send-otp';
   static const String verifyOtp = '/verify-otp';
   static const String resendOtp = '/resend-otp';
+  static const String getOrders = '/get-buddy-orders';
+
 }

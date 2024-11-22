@@ -45,7 +45,7 @@ class AppTranslations {
       "schedule": "अनुसूची",
       "noOrder": "कोई ऑर्डर नहीं मिला",
       "noOrderBody": "आपके पास आज के लिए कोई निर्धारित ऑर्डर नहीं है।",
-      "upcoming.dart": "आगामी",
+      "upcoming": "आगामी",
       "pickup": "पिकअप",
       "completed": "पूरा हुआ",
       "ongoing": "चल रहा है",
