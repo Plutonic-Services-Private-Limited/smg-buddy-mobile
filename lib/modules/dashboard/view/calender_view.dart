@@ -70,6 +70,9 @@ class CalendarView extends StatelessWidget {
                             onDaySelected: (selectedDay, focusedDay) {
                               if (!isSameDay(controller.selectedDay, selectedDay)) {
                                 controller.selectedDay=selectedDay;
+                                controller.date(selectedDay);
+                                controller.calcDays();
+                                Get.back();
                                 controller.currentDay(selectedDay);
                               }
                             },
